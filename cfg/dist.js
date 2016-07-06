@@ -14,7 +14,7 @@ let config = Object.assign({}, baseConfig, {
     output: {
         path: path.join(__dirname, '/../dist/assets'),
         filename: 'app.js',
-        publicPath: '.' + defaultSettings.publicPath
+        publicPath: './dist/' + defaultSettings.publicPath
     },
     cache: false,
     devtool: 'sourcemap',
