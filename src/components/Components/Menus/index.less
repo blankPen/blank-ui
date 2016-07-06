@@ -1,0 +1,56 @@
+/*
+* @Author: pengzhen
+* @Date:   2016-07-01 17:36:44
+* @Last Modified by:   pengzhen
+* @Last Modified time: 2016-07-02 19:44:59
+*/
+
+.menu {
+    ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+    .active>.menu-btn-wrap .menu-btn {
+        color: #ff6768;
+    }
+    .open>.menu-btn-wrap {
+        .menu-arrow {
+            transform: rotate(-180deg)
+        }
+    }
+    .menu-btn-wrap {
+        position: relative;
+        cursor: pointer;
+        .menu-btn {
+            display: block;
+            width: 100%;
+            font-weight: 800;
+            font-size: 14px;
+            line-height: 44px;
+            height: 44px;
+            color: #444;
+            padding: 0 30px;
+            &:hover {
+                background: rgba(0, 0, 0, 0.09);
+            }
+        }
+        .menu-arrow {
+            position: absolute;
+            z-index: 10;
+            right: 0;
+            top: 0;
+            width: 44px;
+            height: 44px;
+            line-height: 44px;
+            border-radius: 50%;
+            overflow: hidden;
+            text-align: center;
+            transition: all 0.3s;
+            .fa {
+                vertical-align: middle;
+                font-size: 1.4em;
+            }
+        }
+    }
+}

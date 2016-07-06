@@ -1,0 +1,90 @@
+/*
+* @Author: pengzhen
+* @Date:   2016-07-01 17:51:28
+* @Last Modified by:   pengzhen
+* @Last Modified time: 2016-07-06 17:30:15
+*/
+
+@import '../common.less';
+
+.components-example {
+    .container {
+        width: 85%;
+        margin: 0 auto;
+        position: relative;
+    }
+    .left-col {
+        width: 80%;
+    }
+    .right-col {
+        width: 20%;
+        position: absolute;
+        right: 0;
+        top: 0;
+        .right-content{
+            padding-top: 20px;
+            padding-left: 30px;
+        }
+    }
+    .top-nav {
+        position: relative;
+        background: @theme_color;
+        color: #fff;
+        .title {
+            font-size: 48px;
+            padding: 0.67em 0;
+            margin: 0;
+        }
+    }
+    .main {
+        padding: 20px 0;
+    }
+}
+
+.example-coder {
+    .example-title {
+        color: #ee6e73;
+        font-size: 2.4em;
+        margin: 0;
+    }
+    .example-desc {
+        margin-top: 0.5em;
+    }
+}
+
+.code-box {
+    color: rgba(0, 0, 0, 0.870588);
+    transition: all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms;
+    box-sizing: border-box;
+    box-shadow: rgba(0, 0, 0, 0.117647) 0px 1px 6px, rgba(0, 0, 0, 0.117647) 0px 1px 4px;
+    border-radius: 2px;
+    margin-bottom: 32px;
+    background-color: #fff;
+    .code-header {
+        padding: 0 16px;
+        line-height: 56px;
+        font-size: 20px;
+        background-color: rgb(232, 232, 232);
+        cursor: pointer;
+        .right-btn{
+            float: right;
+        }
+    }
+    .code-text {
+        border-width: 1px 0 1px 0;
+        border-style: solid;
+        border-color: rgb(224, 224, 224);
+        background: rgb(248, 248, 248);
+    }
+    .code-example {
+        padding: 15px;
+    }
+}
+
+@keyframes exampleAnim {
+    to {
+        opacity: 0;
+        transform: scale(0.2);
+    }
+}
+

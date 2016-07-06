@@ -1,0 +1,27 @@
+/*
+* @Author: pengzhen
+* @Date:   2016-07-02 16:29:31
+* @Last Modified by:   pengzhen
+* @Last Modified time: 2016-07-06 15:47:08
+*/
+
+.collapse.in {
+    display: block;
+}
+
+.collapse {
+    display: none;
+}
+.will-anim{
+    will-change: width,height;
+}
+.collapsing {
+    position: relative;
+    overflow: hidden;
+    transition-property: height, visibility;
+    transition-duration: .35s;
+    transition-timing-function: ease-out;
+    &.width{
+        transition-property: width, visibility;
+    }
+}

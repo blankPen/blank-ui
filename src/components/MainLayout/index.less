@@ -1,0 +1,76 @@
+/*
+* @Author: pengzhen
+* @Date:   2016-07-01 01:28:05
+* @Last Modified by:   pengzhen
+* @Last Modified time: 2016-07-06 17:30:51
+*/
+@import '../common.less';
+
+.layout-transition(){
+    transition: all 0.3s;
+}
+.main-layout{
+    .layout-manus{
+        position: fixed;
+        width: @menu_width;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        .layout-transition();
+    }
+    .layout-container{
+        margin-left: @menu_width;
+        .layout-transition();
+    }
+}
+.btn.btn-flat.btn-default.toggle-menu{
+    width: 36px;
+    height: 36px;
+    line-height: 36px;
+    font-size: 16px;
+    padding: 0;
+    position: absolute;
+    z-index: 10;
+    background: transparent;
+    color: #fff;
+    display: none;
+}
+.menu-mask{
+    background: #000;
+    opacity: .3;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    display: none;
+    z-index: 49;
+}
+@media screen and (max-width: @screen_md){
+    body.open-menu .menu-mask{
+        display: block;
+    }
+    .main-layout{
+        .btn.btn-flat.btn-default.toggle-menu{
+            display: block;
+        }
+        .layout-manus{
+            left: -224px;
+            z-index: 50;
+            &.open{
+                left: 0;
+            }
+        }
+        .layout-container{
+            margin-left: 0;
+        }
+    }
+    .components-example {
+        .left-col {
+            width: 100% !important;
+        }
+        .right-col {
+            display: none;
+        }
+    }
+}
