@@ -1,0 +1,68 @@
+/*
+* @Author: pengzhen
+* @Date:   2016-07-06 15:55:41
+* @Last Modified by:   pengzhen
+* @Last Modified time: 2016-07-06 17:17:13
+*/
+
+@color: #ee6e73;
+@hover_color: #f9c9cb;
+.tabs {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: block;
+    position: relative;
+    overflow-x: auto;
+    overflow-y: hidden;
+    height: 48px;
+    background-color: #fff;
+    margin: 0 auto;
+    white-space: nowrap;
+    .tabs-item {
+        display: block;
+        float: left;
+        text-align: center;
+        line-height: 48px;
+        height: 48px;
+        padding: 0;
+        margin: 0;
+        text-transform: uppercase;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        letter-spacing: .8px;
+        width: 15%;
+        min-width: 80px;
+        cursor: pointer;
+        a {
+            color: @color;
+            display: block;
+            width: 100%;
+            height: 100%;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            transition: color .28s ease;
+            &:hover {
+                color: @hover_color;
+            }
+        }
+    }
+    .tabs-underline {
+        position: absolute;
+        bottom: 0;
+        height: 2px;
+        background: @color;
+        transition: left 0.3s, right 0.1s;
+        will-change: left, right;
+    }
+    &.tabs-auto-width {
+        display: flex;
+        .tabs-item {
+            -webkit-box-flex: 1;
+            -webkit-flex-grow: 1;
+            -ms-flex-positive: 1;
+            flex-grow: 1;
+        }
+    }
+}

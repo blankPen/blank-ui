@@ -1,0 +1,83 @@
+/*
+* @Author: pengzhen
+* @Date:   2016-07-05 19:56:17
+* @Last Modified by:   pengzhen
+* @Last Modified time: 2016-07-05 21:30:52
+*/
+@import '../style/index.less';
+
+.btn {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    border-radius: 2px;
+    border: 10px;
+    box-sizing: border-box;
+    cursor: pointer;
+    display: inline-block;
+    font-size: inherit;
+    font-weight: inherit;
+    height: 32px;
+    line-height: 32px;
+    padding: 0px 16px;
+    margin: 0px;
+    outline: none;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    transform: translate3d(0px, 0px, 0px);
+    transition: all 450ms;
+    &.btn-sm{
+        line-height: 22px;
+        height: 22px;
+        padding: 0 6px;
+        font-size: 12px;
+    }
+    &.btn-md{
+        line-height: 32px;
+        height: 32px;
+        padding: 0 14px;
+        font-size: 14px;
+    }
+    &.btn-lg{
+        line-height: 40px;
+        height: 40px;
+        padding: 0 20px;
+        font-size: 18px;
+    }
+}
+
+.btn.btn-raised{
+    box-shadow: rgba(0, 0, 0, 0.117647) 0px 1px 6px, rgba(0, 0, 0, 0.117647) 0px 1px 4px;
+    &.btn-default{
+        background-color: @default_color;
+        color: #000;
+    }
+    &.btn-primary{
+        background-color: @primary_color;
+        color: #fff;
+    }
+    &.btn-secondary{
+        background-color: @secondary_color;
+        color: #fff;
+    }
+    &:disabled{
+        background-color: @disabled_color;
+        color: graytext;
+        box-shadow: none;
+    }
+}
+
+.btn.btn-flat{
+    background: #fff;
+    &.btn-default{
+        color: #000;
+    }
+    &.btn-primary{
+        color: @primary_color;
+    }
+    &.btn-secondary{
+        color: @secondary_color;
+    }
+    &:disabled{
+        color: @disabled_color;
+    }
+}

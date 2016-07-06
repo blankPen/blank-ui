@@ -1,0 +1,71 @@
+/*
+* @Author: pengzhen
+* @Date:   2016-07-05 13:44:44
+* @Last Modified by:   pengzhen
+* @Last Modified time: 2016-07-06 15:45:42
+*/
+.modal-mask{
+    background: #000;
+    bottom: 0;
+    display: none;
+    left: 0;
+    opacity: .3;
+    position: fixed;
+    right: 0;
+    top: 0;
+    transition: all .3s;
+    z-index: 99;
+}
+.modal-wrap {
+    bottom: 0;
+    display: none;
+    left: 0;
+    overflow: auto;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 100;
+    &.open {
+        display: block;
+    }
+    .modal-bg {
+        background: #000;
+        height: 100%;
+        opacity: 0;
+        position: absolute;
+        transition: all .3s;
+        width: 100%;
+    }
+    .modal-content {
+        display: none;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        will-change: transform,opacity;
+        &.open {
+            display: block;
+        }
+        &.transiting {
+            display: block;
+            position: relative;
+            transition-duration: .3s;
+            transition-property: all;
+            transition-timing-function: ease-in-out;
+        }
+    }
+    .modal {
+        background: #fff;
+        border-radius: 2px;
+        box-shadow: 0 8px 17px 0 rgba(0,0,0,.2);
+        margin: 0 auto 20px auto;
+        max-width: 90%;
+        position: relative;
+        width: auto;
+        top: 80px;
+    }
+    .modal-body{
+        padding: 10px;
+    }
+}
