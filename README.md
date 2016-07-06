@@ -20,11 +20,12 @@
 ## 如何使用
 
 ```
-    npm install react-blank-ui --save //其实我还没发布
+    npm install blank-ui --save //其实我还没发布
 ```
 
 ## 如何贡献自己的组件
-发邮件给我，或者加我Q,一个人的力量肯定有限的~人越多当然组件才越强大~
+fork项目pull request或者联系我要权限
+一个人的力量肯定有限的~人越多当然组件才越强大~
 
 联系我：529629354@qq.com
     
