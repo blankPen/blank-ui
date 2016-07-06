@@ -3,12 +3,12 @@
  * @Date:   2016-07-03 19:50:30
  * @Desc: this_is_desc
  * @Last Modified by:   pengzhen
- * @Last Modified time: 2016-07-06 14:23:25
+ * @Last Modified time: 2016-07-06 20:39:42
  */
 
 'use strict';
 import React from 'react';
-import Picture from 'react-material/Picture';
+import Picture from 'blank-ui/lib/Picture';
 
 export default class example extends React.Component {
  
@@ -74,4 +74,4 @@ export default class example extends React.Component {
 }
 
 export const title = "Lazyload Img";
-export const code = 'import React from \'react\';\nimport Picture from \'react-material/Picture\';\n\nexport default class example extends React.Component {\n \n    constructor(props) {\n        super(props);\n    }\n    render() {\n        let style = {\n            width: \'31%\',\n            height: 150,\n            margin: \'1%\',\n            float: \'left\'\n        }\n        let data = [\n            //...data\n        ];\n        let myLoading = (\n            <div style={{\n                    background: \'#ddd\',\n                    color: \'#fff\',\n                    textAlign: \'center\',\n                    lineHeight: \'150px\'\n                }}\n            >\n                <i className=\"fa fa-2x fa-circle-o-notch fa-spin\"></i>\n            </div>\n        );\n        return (\n            <div style={{overflow: \'hidden\'}}>\n                {data.map((url,i)=>{\n                    return (\n                        <div key={i} style={style} >\n                            <Picture \n                                src={url} \n                                holderLoading={myLoading}\n                            />\n                        </div>\n                    )\n                })}\n            </div>\n        );\n    }\n}';
+export const code = 'import React from \'react\';\nimport Picture from \'blank-ui/lib/Picture\';\n\nexport default class example extends React.Component {\n \n    constructor(props) {\n        super(props);\n    }\n    render() {\n        let style = {\n            width: \'31%\',\n            height: 150,\n            margin: \'1%\',\n            float: \'left\'\n        }\n        let data = [\n            //...data\n        ];\n        let myLoading = (\n            <div style={{\n                    background: \'#ddd\',\n                    color: \'#fff\',\n                    textAlign: \'center\',\n                    lineHeight: \'150px\'\n                }}\n            >\n                <i className=\"fa fa-2x fa-circle-o-notch fa-spin\"></i>\n            </div>\n        );\n        return (\n            <div style={{overflow: \'hidden\'}}>\n                {data.map((url,i)=>{\n                    return (\n                        <div key={i} style={style} >\n                            <Picture \n                                src={url} \n                                holderLoading={myLoading}\n                            />\n                        </div>\n                    )\n                })}\n            </div>\n        );\n    }\n}';

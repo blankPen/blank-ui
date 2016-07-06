@@ -3,7 +3,7 @@
  * @Date:   2016-06-30 23:31:47
  * @Desc: this_is_desc
  * @Last Modified by:   pengzhen
- * @Last Modified time: 2016-07-06 17:34:11
+ * @Last Modified time: 2016-07-06 20:47:42
  */
 
 'use strict';
@@ -13,7 +13,7 @@ import {
     connect
 } from 'react-redux';
 import history from 'store/history';
-import Menus from 'react-material/Menus';
+import Menus from 'blank-ui/lib/Menus';
 // import AutoComplete from 'material-ui/AutoComplete';
 import { menus } from '../../routes/example.jsx';
 
@@ -47,6 +47,10 @@ export class MenusBox extends React.Component {
         }
     }
     handleChange = (menu, value) => {
+        this.props.dispatch({
+            type: 'toggleMenu',
+            flag: false
+        })
         history.push(value)
     }
     render() {

@@ -3,12 +3,12 @@
  * @Date:   2016-07-03 19:50:30
  * @Desc: this_is_desc
  * @Last Modified by:   pengzhen
- * @Last Modified time: 2016-07-05 21:16:13
+ * @Last Modified time: 2016-07-06 20:39:49
  */
 
 'use strict';
 import React from 'react';
-import {RaisedButton} from 'react-material/Button';
+import {RaisedButton} from 'blank-ui/lib/Button';
 
 export default class example extends React.Component {
  
@@ -31,4 +31,4 @@ export default class example extends React.Component {
 }
 
 export const title = "Raised Button";
-export const code = 'import React from \'react\';\nimport {RaisedButton} from \'react-material/Button\';\n\nexport default class example extends React.Component {\n \n    constructor(props) {\n        super(props);\n    }\n    render() {\n        var style = {\n            margin: 10\n        }\n        return (\n            <div >\n                <RaisedButton style={style}>DEFAULT</RaisedButton>\n                <RaisedButton style={style} type=\'primary\'>PRIMARY</RaisedButton>\n                <RaisedButton style={style} type=\'secondary\'>SECONDARY</RaisedButton>\n                <RaisedButton style={style} disabled={true} >DISABLED</RaisedButton>\n            </div>\n        );\n    }\n}';
+export const code = 'import React from \'react\';\nimport {RaisedButton} from \'blank-ui/lib/Button\';\n\nexport default class example extends React.Component {\n \n    constructor(props) {\n        super(props);\n    }\n    render() {\n        var style = {\n            margin: 10\n        }\n        return (\n            <div >\n                <RaisedButton style={style}>DEFAULT</RaisedButton>\n                <RaisedButton style={style} type=\'primary\'>PRIMARY</RaisedButton>\n                <RaisedButton style={style} type=\'secondary\'>SECONDARY</RaisedButton>\n                <RaisedButton style={style} disabled={true} >DISABLED</RaisedButton>\n            </div>\n        );\n    }\n}';

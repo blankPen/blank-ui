@@ -3,7 +3,7 @@
  * @Date:   2016-06-29 17:12:49
  * @Desc: this_is_desc
  * @Last Modified by:   pengzhen
- * @Last Modified time: 2016-07-01 22:31:43
+ * @Last Modified time: 2016-07-06 20:34:51
  */
 
 'use strict';
@@ -12,15 +12,9 @@ import React from 'react';
 import {
     connect
 } from 'react-redux';
-import * as colors from 'material-ui/styles/colors';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import MainLayout from 'components/MainLayout';
 import Menus from 'components/Menus';
 
-const muiTheme = getMuiTheme({
-   
-});
 
 function mapStateToProps(state) {
     return {
@@ -39,12 +33,10 @@ export class App extends React.Component {
     render() {
 
         return (
-            <MuiThemeProvider>
-                <MainLayout
-                    menus={<Menus pathname={this.props.location.pathname} />}
-                    children={this.props.children}
-                />
-            </MuiThemeProvider>
+            <MainLayout
+                menus={<Menus pathname={this.props.location.pathname} />}
+                children={this.props.children}
+            />
         );
     }
 }

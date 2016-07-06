@@ -3,13 +3,13 @@
  * @Date:   2016-07-03 16:46:08
  * @Desc: this_is_desc
  * @Last Modified by:   pengzhen
- * @Last Modified time: 2016-07-05 21:13:05
+ * @Last Modified time: 2016-07-06 20:39:47
  */
 
 'use strict';
 import React from 'react';
-import Collapse from 'react-material/Collapse';
-import { RaisedButton } from 'react-material/Button';
+import Collapse from 'blank-ui/lib/Collapse';
+import { RaisedButton } from 'blank-ui/lib/Button';
 
 export default class Example extends React.Component {
 

@@ -3,18 +3,18 @@
  * @Date:   2016-07-01 17:51:18
  * @Desc: this_is_desc
  * @Last Modified by:   pengzhen
- * @Last Modified time: 2016-07-05 22:56:24
+ * @Last Modified time: 2016-07-06 20:42:15
  */
 
 'use strict';
 import './example.less';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Codemirror from 'react-material/Codemirror';
-import wave from 'react-material/Wave';
-import Collapse from 'react-material/Collapse';
-import Affix from 'react-material/Affix';
-import IndexLink from 'react-material/IndexLink';
+import Codemirror from 'blank-ui/lib/Codemirror';
+import wave from 'blank-ui/lib/Wave';
+import Collapse from 'blank-ui/lib/Collapse';
+import Affix from 'blank-ui/lib/Affix';
+import IndexLink from 'blank-ui/lib/IndexLink';
 import DocumentUtils from 'utils/DocumentUtils';
 
 
@@ -79,7 +79,7 @@ export default class Example extends React.Component {
                     </div>
                     <div className="right-col">
                         <Affix className='right-content'>
-                            <GitBox></GitBox>
+                            {/*<GitBox></GitBox>*/}
                             <IndexLink parent={this} data={links}/>
                         </Affix>
                     </div>
@@ -102,14 +102,14 @@ class GitBox extends React.Component {
         return (
             <div className="git-box">
                 <iframe 
-                    src="https://ghbtns.com/github-btn.html?user=pengzhen1994&repo=react-material&type=watch&count=true&size=large&v=2" 
+                    src="https://ghbtns.com/github-btn.html?user=blankPenz&repo=blank-ui/lib&type=watch&count=true&size=large&v=2" 
                     frameBorder="0" scrolling="0" width="160px" height="30px"></iframe>
                 <iframe 
-                    src="https://ghbtns.com/github-btn.html?user=pengzhen1994&repo=react-material&type=star&count=true&size=large" 
+                    src="https://ghbtns.com/github-btn.html?user=blankPenz&repo=blank-ui/lib&type=star&count=true&size=large" 
                     frameBorder="0" scrolling="0" width="160px" height="30px"></iframe>
 
                 <iframe 
-                    src="https://ghbtns.com/github-btn.html?user=pengzhen1994&repo=react-material&type=fork&count=true&size=large" 
+                    src="https://ghbtns.com/github-btn.html?user=blankPenz&repo=blank-ui/lib&type=fork&count=true&size=large" 
                     frameBorder="0" scrolling="0" width="160px" height="30px"></iframe>
             </div>
         );

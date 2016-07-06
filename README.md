@@ -1,6 +1,6 @@
-# react-material——用于二次开发的React组件库
+# blank-ui/lib——用于二次开发的React组件库
 
-### [API文档](https://pengzhen1994.github.io/react-material/)
+### [API文档](https://pengzhen1994.github.io/blank-ui)
 
 ## 关于写这套组件的原因？
 - 现在已经有很多成型的组件库，例如ant-design、material-ui等等，所以我还是想写一个练练手。
