@@ -1,4 +1,4 @@
-# blank-ui/lib——用于二次开发的React组件库
+# blank-ui——用于二次开发的React组件库
 
 ### [API文档](https://pengzhen1994.github.io/blank-ui)
 
