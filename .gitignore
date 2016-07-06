@@ -30,6 +30,5 @@ node_modules
 # Bower
 bower_components/
 /.project
-/dist/
 
 assets/app.js.map
