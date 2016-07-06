@@ -20,7 +20,7 @@
 ## 如何使用
 
 ```
-    npm install blank-ui --save //其实我还没发布
+    npm install blank-ui --save
 ```
 
 ## 如何贡献自己的组件
