@@ -3,7 +3,7 @@
 * @Date:   2016-07-02 17:24:49
 * @Desc: this_is_desc
 * @Last Modified by:   pengzhen
-* @Last Modified time: 2016-07-05 19:05:55
+* @Last Modified time: 2016-07-09 16:52:48
 */
 
 'use strict';
@@ -140,4 +140,32 @@ export function createElement(str){
         el = el.childNodes[0];
     }
     return el;
+}
+
+export function contains(wrapNode, sonNode) {
+    if(wrapNode == sonNode){
+        return true;
+    }
+    // 判断浏览器是否有 contains 方法
+    if (typeof wrapNode.contains == 'function') {
+        return wrapNode.contains(sonNode);
+    } else
+    // 判断浏览器是否有 compareDocumentPosition 方法 且 返回值为16 
+    // https://developer.mozilla.org/en-US/docs/Web/API/Node.compareDocumentPosition
+    if (typeof wrapNode.compareDocumentPosition == 'function') {
+        // wrapNode.compareDocumentPosition(sonNode) == 16 
+        return !!(wrapNode.compareDocumentPosition(sonNode) & 16);
+    } else {
+        // 循环查出父节点 是否 等于 wrapNode; 
+        var node = sonNode.parentNode;
+        do {
+            if (node === wrapNode) {
+                return true;
+            } else {
+                node = node.parentNode;
+            }
+            // null  === document.parentNode
+        } while (node !== null);
+        return false;
+    }
 }
