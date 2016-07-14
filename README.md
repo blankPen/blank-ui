@@ -19,9 +19,17 @@
 ## 如何使用
 
 ```
-   // npm install blank-ui --save
-   // 占时直接从/src/component/Components拷贝,在webpack中设置resolve.alias别名为'xxx-ui'
-   // 引入时 import Modal from 'xxx-ui/Modal';
+   npm install blank-ui --save
+   //因为代码是未编译所以在webpack中要按如下代码添加对blank-ui的代码编译
+   //或者可以直接将源码复制到你的工程中
+   {
+      test: /\.(js|jsx)$/,
+      loader: 'react-hot!babel-loader',
+      include:[
+         path.join(__dirname, '/../src'),
+         path.join(__dirname, '/../node_modules/blank-ui')
+      ]
+  }
 ```
 
 ## 如何贡献自己的组件
