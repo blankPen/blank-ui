@@ -3,7 +3,7 @@
  * @Date:   2016-07-03 19:50:30
  * @Desc: this_is_desc
  * @Last Modified by:   pengzhen
- * @Last Modified time: 2016-07-09 15:27:48
+ * @Last Modified time: 2016-07-14 15:45:38
  */
 
 'use strict';
@@ -58,5 +58,5 @@ export default class example extends React.Component {
     }
 }
 
-export const title = "Data Tabs";
-export const code = 'import React from \'react\';\nimport Tabs,{TabItem} from \'blank-ui/lib/Tabs\';\n\nexport default class example extends React.Component {\n \n    constructor(props) {\n        super(props);\n        this.state = {\n            index: 1\n        }\n    }\n    handleChange=(index)=>{\n        this.setState({\n            index \n        });\n    }\n    render() {\n        return (\n            <div className=\'paper\'>\n                <Tabs \n                    index={this.state.index} \n                    onChange={this.handleChange}\n                    data = {[\n                        { index:1,title:\'Ttitle 1\' },\n                        { index:2,title:\'Ttitle 2\' },\n                        { index:3,title:\'Ttitle 3\' },\n                        { index:4,title:\'Ttitle 4\' },\n                        { index:5,title:\'Ttitle 5\' }\n                    ]} \n                />\n            </div>\n        );\n    }\n}\n';
+export const title = "Simple Popover";
+export const code = 'import React from \'react\';\nimport Popover from \'blank-ui/lib/Popover\';\nimport { RaisedButton,FlatButton } from \'blank-ui/lib/Button\';\n\nexport default class example extends React.Component {\n \n    constructor(props) {\n        super(props);\n        this.state = {\n            index: 1\n        }\n    }\n    handleChange=(index)=>{\n        this.setState({\n            index \n        });\n    }\n    render() {\n        const content = (\n            <div>\n                <FlatButton style={{width: \'100%\'}}>Button 1</FlatButton>\n                <FlatButton style={{width: \'100%\'}}>Button 2</FlatButton>\n                <FlatButton style={{width: \'100%\'}}>Button 3</FlatButton>\n                <FlatButton style={{width: \'100%\'}}>Button 4</FlatButton>\n            </div>\n        )\n        return (\n            <div>\n                \n                <div style={{width: \'33%\',display:\'inline-block\'}}>\n                    <Popover content={content}>\n                        <RaisedButton>Button</RaisedButton>\n                    </Popover>\n                </div>\n\n                <div style={{width: \'33%\',display:\'inline-block\'}}>\n                    <Popover trigger=\'hover\' content={content}>\n                        <RaisedButton>Button</RaisedButton>\n                    </Popover>\n                </div>\n\n                <div style={{width: \'33%\',display:\'inline-block\'}}>\n                    <Popover trigger=\'focus\' content={content}>\n                        <RaisedButton>Button</RaisedButton>\n                    </Popover>\n                </div>\n            </div>\n        );\n    }\n}\n';
