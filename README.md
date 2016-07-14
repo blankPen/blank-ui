@@ -20,7 +20,9 @@
 ## 如何使用
 
 ```
-    npm install blank-ui --save
+   // npm install blank-ui --save
+   // 占时直接从/src/component/Components拷贝,在webpack中设置resolve.alias别名为'xxx-ui'
+   // 引入时 import Modal from 'xxx-ui/Modal';
 ```
 
 ## 如何贡献自己的组件
