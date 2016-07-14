@@ -1,6 +1,6 @@
-# blank-ui/lib——用于二次开发的React组件库
+# blank-ui——用于二次开发的React组件库
 
-### [API文档](https://pengzhen1994.github.io/blank-ui)
+### [API文档](https://blankPen.github.io/blank-ui)
 
 ## 关于写这套组件的原因？
 - 现在已经有很多成型的组件库，例如ant-design、material-ui等等，所以我还是想写一个练练手。
@@ -13,18 +13,28 @@
 
 ## 优点
 - 代码简洁，基于es6语法，易于解读源码
-- 良好的注释 //代码全中文注释，就算不开发看看源码也能学到不少
 - 样式简单，调整起来非常方便，整体风格趋于material-design
 - 完全开放贡献，虽然现在来说只有我一人~所以希望大家多多分享~~
 
 ## 如何使用
 
 ```
-    npm install react-blank-ui --save //其实我还没发布
+   npm install blank-ui --save
+   //因为代码是未编译所以在webpack中要按如下代码添加对blank-ui的代码编译
+   //或者可以直接将源码复制到你的工程中
+   {
+      test: /\.(js|jsx)$/,
+      loader: 'react-hot!babel-loader',
+      include:[
+         path.join(__dirname, '/../src'),
+         path.join(__dirname, '/../node_modules/blank-ui')
+      ]
+  }
 ```
 
 ## 如何贡献自己的组件
-发邮件给我，或者加我Q,一个人的力量肯定有限的~人越多当然组件才越强大~
+fork项目pull request或者联系我要权限
+一个人的力量肯定有限的~人越多当然组件才越强大~
 
 联系我：529629354@qq.com
     
