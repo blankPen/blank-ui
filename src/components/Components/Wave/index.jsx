@@ -3,7 +3,7 @@
  * @Date:   2016-07-01 18:02:15
  * @Desc: this_is_desc
  * @Last Modified by:   pengzhen
- * @Last Modified time: 2016-07-05 20:33:53
+ * @Last Modified time: 2016-07-09 16:18:24
  */
 
 'use strict';
@@ -66,12 +66,18 @@ export default function wave(opt = {}) {
         target.prototype.render = function() {
             var _this = this;
             var dom = render.call(this);
+            let waveEvent = createWave(opt);
             let children = [
-                dom.props.children,
-                <div ref='wave' className='wave' onClick={createWave(opt).bind(_this)}></div>
+                <div ref='wave' className='wave'></div>,
+                dom.props.children
             ];
+            let method = dom.props.onClick || function(){};
             dom = React.cloneElement(dom, {
-                children: children
+                children: children,
+                onClick: function(e){
+                    method.apply(_this,arguments);
+                    waveEvent.apply(_this,arguments);
+                }
             });
             return dom;
         }

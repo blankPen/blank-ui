@@ -1,3 +1,5 @@
+<<<<<<< HEAD
+=======
 # Logs
 logs
 *.log
@@ -30,5 +32,10 @@ node_modules
 # Bower
 bower_components/
 /.project
+<<<<<<< HEAD
+/dist/
+>>>>>>> master
+=======
+>>>>>>> master
 
 assets/app.js.map
