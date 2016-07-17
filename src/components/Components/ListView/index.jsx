@@ -3,7 +3,7 @@
  * @Date:   2016-07-17 19:37:09
  * @Desc: this_is_desc
  * @Last Modified by:   pengzhen
- * @Last Modified time: 2016-07-17 23:00:12
+ * @Last Modified time: 2016-07-17 23:27:04
  */
 
 'use strict';
@@ -16,10 +16,12 @@ import bindArray from '../utils/bindArray';
 export default class ListView extends React.Component {
     static propTypes = {
         data: React.PropTypes.array,
-        speed: React.PropTypes.number
+        speed: React.PropTypes.number,
+        height: React.PropTypes.any
     };
     static defaultProps = {
-        speed: 10
+        speed: 10,
+        height: 300
     };
     constructor(props) {
         super(props);
@@ -58,8 +60,6 @@ export default class ListView extends React.Component {
         }
     }
     componentDidMount() {
-        // this.listNode = ReactDOM.findDOMNode(this.refs.list);
-        // this.contentNode = ReactDOM.findDOMNode(this.refs.content);
         DomUtils.addEventListener(ReactDOM.findDOMNode(this.refs.list), 'scroll', throttle(this.handleWheel));
     }
     renderList(data = []) {
@@ -115,7 +115,7 @@ export default class ListView extends React.Component {
         return ( 
             <div ref = 'list'
                 style = {{
-                    height: 300,
+                    height: this.props.height,
                     overflow: 'auto',
                     position: 'relative'
                 }} 
