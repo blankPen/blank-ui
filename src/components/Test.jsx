@@ -22,7 +22,7 @@ var Codemirror = require('react-codemirror');
 var Coder = React.createClass({
     getInitialState: function() {
         return {
-            code: ""
+            pre_code: ""
         };
     },
     updateCode: function(newCode) {
@@ -33,10 +33,8 @@ var Coder = React.createClass({
         code = code.replace(/"/g, '\\\"');
 
         this.setState({
-            code: newCode,
             pre_code: 'export const code = \''+code+'\';'
         });
-        this.replaceCode();
     },
     render: function() {
         var options = {
@@ -45,7 +43,7 @@ var Coder = React.createClass({
         return (
             <div>
                 <input type="text" style={{width: 300}} value={this.state.pre_code} />
-                <Codemirror value={this.state.code} onChange={this.updateCode} options={options} />
+                <Codemirror onChange={this.updateCode} options={options} />
             </div>
         )
     }
