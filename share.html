@@ -31,6 +31,9 @@ function initWeixinShare(data) {
         wx.onMenuShareQQ(data);
         wx.onMenuShareWeibo(data);
         wx.onMenuShareQZone(data);
+        document.write("初始化成功")
+    }else{
+        document.write("初始化失败")
     }
 }
 initWeixinShare(data);
