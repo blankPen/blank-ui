@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+</body>
+<script>
+var data = {
+    title: '测试分享',
+    desc: '分享的描述,分享的描述,分享的描述,分享的描述,分享的描述,分享的描述,分享的描述,分享的描述',
+    url: encodeURIComponent('http://mooc.qimooc.com/#/package/1006/detail?_k=np8i8g'),
+    pic: encodeURIComponent('http://content.qixuetang.com.cn/img/content/1/2016/04/05/0925/279d5a56-4f10-4e1b-90f5-a826f2766d19.jpg')
+}
+
+function initWeixinShare(data) {
+    data = {
+        title: data.title, // 分享标题
+        desc: data.desc, // 分享描述
+        link: data.url, // 分享链接
+        imgUrl: data.pic, // 分享图标
+        success: function() {},
+        cancel: function() {}
+    };
+    if (wx) {
+        wx.onMenuShareTimeline(data);
+        wx.onMenuShareAppMessage(data);
+        wx.onMenuShareQQ(data);
+        wx.onMenuShareWeibo(data);
+        wx.onMenuShareQZone(data);
+    }
+}
+initWeixinShare(data);
+</script>
+
+</html>
