@@ -18,24 +18,42 @@ var data = {
 }
 
 function initWeixinShare(data) {
-    data = {
-        title: data.title, // 分享标题
-        desc: data.desc, // 分享描述
-        link: data.url, // 分享链接
-        imgUrl: data.pic, // 分享图标
-        success: function() {},
-        cancel: function() {}
-    };
-    if (window.wx) {
+    wx.config({
+        debug: true, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
+        appId: 'wx416d6a43f1b8cedf', // 必填，公众号的唯一标识
+        timestamp: '1474254482', // 必填，生成签名的时间戳
+        nonceStr: 'c429fc10-3966-4b46-b476-6111e7780af6', // 必填，生成签名的随机串
+        signature: '7e66a62e5c3f1b7628a061eee02ec33febc19878',// 必填，签名，见附录1
+        jsApiList: [
+            'checkJsApi',
+            'onMenuShareTimeline',
+            'onMenuShareAppMessage',
+            'onMenuShareWeibo',
+            'onMenuShareQZone'
+        ]
+    });
+    wx.ready(function(){
+        console.log(1111)
+        // config信息验证后会执行ready方法，所有接口调用都必须在config接口获得结果之后，config是一个客户端的异步操作，所以如果需要在页面加载时就调用相关接口，则须把相关接口放在ready函数中调用来确保正确执行。对于用户触发时才调用的接口，则可以直接调用，不需要放在ready函数中。
+        data = {
+            title: data.title, // 分享标题
+            desc: data.desc, // 分享描述
+            link: data.url, // 分享链接
+            imgUrl: data.pic, // 分享图标
+            success: function() {},
+            cancel: function() {}
+        };
         wx.onMenuShareTimeline(data);
         wx.onMenuShareAppMessage(data);
         wx.onMenuShareQQ(data);
         wx.onMenuShareWeibo(data);
         wx.onMenuShareQZone(data);
-        document.write("初始化成功")
-    }else{
-        document.write("初始化失败")
-    }
+    });
+    wx.error(function(res){
+        console.log(res)
+        // config信息验证失败会执行error函数，如签名过期导致验证失败，具体错误信息可以打开config的debug模式查看，也可以在返回的res参数中查看，对于SPA可以在这里更新签名。
+
+    });
 }
 initWeixinShare(data);
 </script>
