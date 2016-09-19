@@ -25,7 +25,7 @@ function initWeixinShare(data) {
         success: function() {},
         cancel: function() {}
     };
-    if (wx) {
+    if (window.wx) {
         wx.onMenuShareTimeline(data);
         wx.onMenuShareAppMessage(data);
         wx.onMenuShareQQ(data);
