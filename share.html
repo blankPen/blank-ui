@@ -54,7 +54,10 @@ function setInlineAttribute(dom) {
   var player = videojs(dom, {
     controls: true
   });
-
+  window.onresize = function(){
+    dom.style.width = window.innerWidth;
+    dom.style.height = window.innerHeight;
+  }
   </script>
 
 </body>
