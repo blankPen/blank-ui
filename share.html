@@ -1,61 +1,61 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <!-- <meta name="MobileOptimized" content="320" /> -->
+<!-- <meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="screen-orientation" content="portrait" />
+<meta name="x5-orientation" content="portrait">
+<meta name="x5-page-mode" content="app"> -->
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/video.js/5.10.2/video-js.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/video.js/5.10.2/video.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/videojs-contrib-hls/3.0.2/videojs-contrib-hls.js"></script>
 </head>
-
 <body>
+  <video style="width: 100%;" id="my-video" class="video-js"
+		>
+    <source src="http://content.qixuetang.com.cn/media/Sunshine_Girl.mp4" type='video/mp4'>
+</div>
+<div>
+<button type="button" id="play" onclick="javascript:playPause()">play</button>
+<br>
+进度跳转：
+<button type="button" onclick="javascript:seek(0)">0s</button>
+<button type="button" onclick="javascript:seek(70)">70s</button>
+<button type="button" onclick="javascript:seek(140)">140s</button>
+<button type="button" onclick="javascript:seek(210)">210s</button>
+<br>
+播放倍速：
+<button type="button" onclick="javascript:rate(0.75)">0.75x</button>
+<button type="button" onclick="javascript:rate(1)">1x</button>
+<button type="button" onclick="javascript:rate(1.25)">1.25x</button>
+<button type="button" onclick="javascript:rate(1.5)">1.5x</button>
+<!-- <button type="button" onclick="javascript:rate(1.75)">1.75x</button>
+<button type="button" onclick="javascript:rate(2.0)">2.0x</button> -->
+</div>
+
+  <script type="text/javascript">
+
+function setInlineAttribute(dom) {
+    dom.setAttribute('x-webkit-airplay', 'true');
+    dom.setAttribute('x5-video-player-type', 'h5');
+    dom.setAttribute('x5-video-player-fullscreen', true);
+    dom.setAttribute('x5-video-orientation', 'landscape');
+    // dom.setAttribute('x5-video-orientation', 'landscape|portraint');
+    dom.setAttribute('webkit-playsinline', true);
+    dom.setAttribute('webkit-inline', true);
+    dom.setAttribute('playsinline', true);
+}
+  var dom = document.getElementById('my-video');
+  setInlineAttribute(dom);
+
+  var player = videojs(dom, {
+    controls: true
+  });
+
+  </script>
+
 </body>
-<script src='https://res.wx.qq.com/open/js/jweixin-1.0.0.js'></script>
-<script>
-var data = {
-    title: '测试分享',
-    desc: '分享的描述,分享的描述,分享的描述,分享的描述,分享的描述,分享的描述,分享的描述,分享的描述',
-    url: encodeURIComponent('http://mooc.qimooc.com/#/package/1006/detail?_k=np8i8g'),
-    pic: encodeURIComponent('http://content.qixuetang.com.cn/img/content/1/2016/04/05/0925/279d5a56-4f10-4e1b-90f5-a826f2766d19.jpg')
-}
-
-function initWeixinShare(data) {
-    wx.config({
-        debug: true, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
-        appId: 'wx416d6a43f1b8cedf', // 必填，公众号的唯一标识
-        timestamp: '1474254482', // 必填，生成签名的时间戳
-        nonceStr: 'c429fc10-3966-4b46-b476-6111e7780af6', // 必填，生成签名的随机串
-        signature: '7e66a62e5c3f1b7628a061eee02ec33febc19878',// 必填，签名，见附录1
-        jsApiList: [
-            'checkJsApi',
-            'onMenuShareTimeline',
-            'onMenuShareAppMessage',
-            'onMenuShareWeibo',
-            'onMenuShareQZone'
-        ]
-    });
-    wx.ready(function(){
-        console.log(1111)
-        // config信息验证后会执行ready方法，所有接口调用都必须在config接口获得结果之后，config是一个客户端的异步操作，所以如果需要在页面加载时就调用相关接口，则须把相关接口放在ready函数中调用来确保正确执行。对于用户触发时才调用的接口，则可以直接调用，不需要放在ready函数中。
-        data = {
-            title: data.title, // 分享标题
-            desc: data.desc, // 分享描述
-            link: data.url, // 分享链接
-            imgUrl: data.pic, // 分享图标
-            success: function() {},
-            cancel: function() {}
-        };
-        wx.onMenuShareTimeline(data);
-        wx.onMenuShareAppMessage(data);
-        wx.onMenuShareQQ(data);
-        wx.onMenuShareWeibo(data);
-        wx.onMenuShareQZone(data);
-    });
-    wx.error(function(res){
-        console.log(res)
-        // config信息验证失败会执行error函数，如签名过期导致验证失败，具体错误信息可以打开config的debug模式查看，也可以在返回的res参数中查看，对于SPA可以在这里更新签名。
-
-    });
-}
-initWeixinShare(data);
-</script>
-
 </html>
