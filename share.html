@@ -1,51 +1,54 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-  <meta charset="UTF-8">
-  <!-- <meta name="MobileOptimized" content="320" /> -->
-<!-- <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta charset="UTF-8">
+    <!-- <meta name="MobileOptimized" content="320" /> -->
+    <!-- <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="mobile-web-app-capable" content="yes" />
 <meta name="screen-orientation" content="portrait" />
 <meta name="x5-orientation" content="portrait">
 <meta name="x5-page-mode" content="app"> -->
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1">
-<link href="https://cdnjs.cloudflare.com/ajax/libs/video.js/5.10.2/video-js.css" rel="stylesheet">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/video.js/5.10.2/video.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/videojs-contrib-hls/3.0.2/videojs-contrib-hls.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/video.js/5.10.2/video-js.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/video.js/5.10.2/video.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/videojs-contrib-hls/3.0.2/videojs-contrib-hls.js"></script>
 </head>
+
 <body>
-	<div>
-  <video src="http://content.qixuetang.com.cn/media/Sunshine_Girl.mp4" webkit-playsinline="" webkit-inline="" style="width: 320px; height: 203px;"></video>
-</div>
-	<div>
-  <video style="width: 320px; height: 203px;" id="my-video" class="video-js">
-    <source src="http://content.qixuetang.com.cn/media/Sunshine_Girl.mp4" type='video/mp4'>
-	</video>
-</div>
+    <div>
+        <video src="http://content.qixuetang.com.cn/media/Sunshine_Girl.mp4"
+          webkit-playsinline="" webkit-inline="" style="width: 320px; height: 203px;"></video>
+    </div>
+    <div>
+        <video style="width: 320px; height: 203px;" id="my-video" class="video-js">
+            <source src="http://content.qixuetang.com.cn/media/Sunshine_Girl.mp4" type='video/mp4'>
+        </video>
+    </div>
+    <script type="text/javascript">
+    alert(1);
 
-  <script type="text/javascript">
-alert(1);
-function setInlineAttribute(dom) {
-    // dom.setAttribute('x-webkit-airplay', 'true');
-    dom.setAttribute('x5-video-player-type', 'h5');
-    dom.setAttribute('x5-video-player-fullscreen', true);
-//     dom.setAttribute('x5-video-orientation', 'landscape');
-    dom.setAttribute('x5-video-orientation', 'portraint');
-    dom.setAttribute('webkit-playsinline', '');
-    dom.setAttribute('webkit-inline', '');
-    dom.setAttribute('playsinline', '');
-}
-  var dom = document.getElementById('my-video');
-  setInlineAttribute(dom);
+    function setInlineAttribute(dom) {
+        // dom.setAttribute('x-webkit-airplay', 'true');
+        // dom.setAttribute('x5-video-player-type', 'h5');
+        // dom.setAttribute('x5-video-player-fullscreen', true);
+        //     dom.setAttribute('x5-video-orientation', 'landscape');
+        // dom.setAttribute('x5-video-orientation', 'portraint');
+        dom.setAttribute('webkit-playsinline', '');
+        dom.setAttribute('webkit-inline', '');
+        dom.setAttribute('playsinline', '');
+    }
+    var dom = document.getElementById('my-video');
+    setInlineAttribute(dom);
 
-  var player = videojs(dom, {
-    controls: true
-  });
-//   window.onresize = function(){
-//     dom.style.width = window.innerWidth;
-//     dom.style.height = window.innerHeight;
-//   }
-  </script>
-
+    var player = videojs(dom, {
+        controls: true
+    });
+    //   window.onresize = function(){
+    //     dom.style.width = window.innerWidth;
+    //     dom.style.height = window.innerHeight;
+    //   }
+    </script>
 </body>
+
 </html>
