@@ -4,11 +4,12 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+    <link rel="stylesheet" href="http://wx.shixuewen.com/h5/css/aui.2.0.css"/>
     <style>
         #scrollBox {
             position: absolute;
             z-index: 10;
-            left: 0;:q:q;
+            left: 0;
             right: 0;
             width: 100%;
         }
@@ -58,88 +59,16 @@
     </style>
 </head>
 <body>
-
-<!--<header class="aui-bar aui-bar-nav">-->
-<!--<a href="javascript:history.go(-1);" class="aui-pull-left aui-btn">-->
-<!--<span class="aui-iconfont aui-icon-left"></span>-->
-<!--</a>-->
-<!--<div id="title" class="aui-title">视频直播</div>-->
-<!--</header>-->
 <div id="videoBox">
     <input id="playBtn" type="button" value="">
     <img id="poster" src="images/player.jpg" alt="">
-    <!--<video id="videoBox" controls preload="auto" poster="images/tempPoster.jpg" x5-video-player-type="h5" x5-video-player-fullscreen="true">-->
     <video id="videoLive" preload="auto" poster=""  x5-video-player-type="h5" x5-video-player-fullscreen="true" webkit-playsinline="true" x-webkit-airplay="true" playsinline="true">
-        <!--<source src="http://221.208.196.19:8080/hls/stream1.m3u8" type="application/x-mpegURL">-->
         <source src="http://200052710.vod.myqcloud.com/200052710_9ba720938691e7c50c798fae46f4eabd9086ed43.f0.mp4">
     </video>
 </div>
 <div id="scrollBox">
-    <div id="content" class="aui-content aui-margin-b-15">
-        <ul id="infoList" class="aui-list aui-list-in">
-            <li class="aui-list-item">
-                <div class="aui-list-item-inner">
-                    <div class="aui-list-item-label">课名：</div>
-                    2016中考一模数学试题解析
-                </div>
-            </li>
-            <li class="aui-list-item">
-                <div class="aui-list-item-inner">
-                    <div class="aui-list-item-label">教师：</div>
-                    于妍
-                </div>
-            </li>
-            <li class="aui-list-item">
-                <div class="aui-list-item-inner">
-                    <div class="aui-list-item-label">年级：</div>
-                    中考
-                </div>
-            </li>
-            <li class="aui-list-item">
-                <div class="aui-list-item-inner">
-                    <div class="aui-list-item-label">科目：</div>
-                    数学
-                </div>
-            </li>
-        </ul>
-        <ul id="infoListB" class="aui-list aui-media-list">
-            <li class="aui-list-item">
-                <div class="aui-media-list-item-inner">
-                    <div class="aui-list-item-inner">
-                        <div class="aui-list-item-text">
-                            <div class="aui-list-item-title">知识点：</div>
-                            <div class="aui-list-item-right"></div>
-                        </div>
-                        <div class="aui-list-item-text">磁生电，电动机。</div>
-                    </div>
-                </div>
-            </li>
-            <li class="aui-list-item">
-                <div class="aui-media-list-item-inner">
-                    <div class="aui-list-item-inner">
-                        <div class="aui-list-item-text">
-                            <div class="aui-list-item-title">本课主要讲解：</div>
-                            <div class="aui-list-item-right"></div>
-                        </div>
-                        <div class="aui-list-item-text">磁生电现象即电磁感应现象。老师讲解产生电磁感应的条件和仪器，现场通过实验操作加深理解电磁感应现象。讲解电动机中的电磁感应现象。
-                        </div>
-                    </div>
-                </div>
-            </li>
-            <li class="aui-list-item">
-                <div class="aui-media-list-item-inner">
-                    <div class="aui-list-item-inner">
-                        <div class="aui-list-item-text">
-                            <div class="aui-list-item-title">授课教师：</div>
-                            <div class="aui-list-item-right"></div>
-                        </div>
-                        <div class="aui-list-item-text">石老师，初中优秀物理教师，高级教师职称，区兼职教研员。省级骨干教师，曾获省、市、区的课堂教学比赛一、二等奖，区"解题能手"称号，
-                            多次参加市初中升学考试试题的命制。
-                        </div>
-                    </div>
-                </div>
-            </li>
-        </ul>
+    <div style="height: 1000px;background: #ff6768">
+
     </div>
 </div>
 <!--<div id="scrollBox">-->
@@ -165,9 +94,8 @@
 <!--<p>测试19</p>-->
 <!--</div>-->
 <!--</div>-->
-<script src="js/iscroll.js"></script>
+<!-- <script src="js/iscroll.js"></script> -->
 <script>
-    alert('123')
     var iWindowWidth;
     var iWindowHeight;
     window.onresize = function () {
@@ -186,11 +114,7 @@
     //遮罩图片
     var oPoster = document.getElementById("poster");
     var oScroll = document.getElementById("scroll");
-    //图片加载完
-    oPoster.onload = function () {
-        oVideoBox.style.height = oPoster.offsetHeight + "px";
-    }
-    var fScroll=new iScroll(oScrollBox, {hScrollbar: false, vScrollbar: false,bounce:false});
+
     window.addEventListener('touchmove', function (e) {
      e.preventDefault();
      }, false);
@@ -202,7 +126,6 @@
         var iScrollH = 3 * iWindowWidth / 4;
         oScrollBox.style.top = iScrollH + "px";
         oScrollBox.style.height = iWindowHeight - iScrollH + "px";
-        fScroll.refresh();
     }
     autoWH();
 
@@ -211,11 +134,9 @@
         myPlayer.play();
         this.style.display = oPoster.style.display = "none";
     }
-
     //监听播放
     myPlayer.addEventListener('play', function () {
         alert("播放");
-
     }, false);
     //监听暂停
     myPlayer.addEventListener('pause', function () {
